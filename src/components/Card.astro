@@ -1,0 +1,17 @@
+---
+interface Props {
+	img: string;
+	title: string;
+	subtitle: string;
+	href: string;
+}
+
+const { href, img, title, subtitle } = Astro.props;
+---
+
+<a href={href}
+	class={(href === "#" ? `opacity-30` : `opacity-90 hover:shadow-card-hover hover:opacity-100`) + ` relative rounded px-8 pt-[38px] pb-[44px] shadow-card aspect-[0.675] font-display keen-slider__slide transition-[opacity,box-shadow] duration-300 text-white flex flex-col justify-between`}>
+	<img src={img} class="absolute w-full h-full object-cover inset-0 rounded" alt="" />
+	<div class="font-medium text-sm leading-[16px] relative" set:html={subtitle}></div>
+	<h3 class="uppercase text-[32px] leading-[38px] font-medium relative tracking-[-0.32px]" set:html={title}></h3>
+</a>
