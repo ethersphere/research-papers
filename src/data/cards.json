@@ -37,9 +37,9 @@
   },
   {
     "slug": "erasure",
-    "title": "Erasure<br />Coding paper",
+    "title": "Erasure Coding paper",
     "subtitle": "Swarm<br>team",
-    "href": "#",
+    "href": "/p/erasure/",
     "img": "/erasure.png",
     "authors": "Swarm Research Division",
     "release": "v1.0",
