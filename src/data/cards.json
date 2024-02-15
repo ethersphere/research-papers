@@ -18,8 +18,8 @@
     "href": "/p/book-of-swarm/",
     "img": "/book_of_swarm.png",
     "authors": "Viktor Trón",
-    "release": "v2.0 pre-release 1.4",
-    "updated": "December 21, 2023",
+    "release": "February 2024",
+    "updated": "February 2024",
     "pdf": "https://www.ethswarm.org/the-book-of-swarm-2.pdf",
     "content": "An essential introduction to Swarm for technically inclined readers, \"The Book of Swarm\" delves into the project's design, architecture and core principles. Ideal for developers, researchers and decentralisation experts, it provides a detailed exploration of Swarm's functionality, starting with a historical context of the Web and evolving data sovereignty concepts. This book is a vital resource for those seeking to understand or contribute to the Swarm project, offering in-depth technical insights and high-level specifications."
   },
