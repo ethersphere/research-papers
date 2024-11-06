@@ -42,8 +42,8 @@
     "href": "/p/erasure/",
     "img": "/erasure.png",
     "authors": "Swarm Research Division",
-    "release": "v1.0",
-    "updated": "January 25, 2024",
+    "release": "v1.1",
+    "updated": "November 6, 2024",
     "pdf": "/erasure-coding.pdf",
     "content": "This document provides a technical exploration of erasure coding in the Swarm network, focusing on ensuring data integrity and resilience. It details the implementation of Reed-Solomon coding within Swarm's hash tree structure for robust data storage and recovery. The paper is ideal for developers and engineers seeking a deep understanding of Swarm's data handling mechanisms, particularly in scenarios of network faults and attacks. Key aspects include handling incomplete data sets and optimizing retrieval strategies, making it a critical read for those involved in the technical aspects of decentralised data storage."
   }
