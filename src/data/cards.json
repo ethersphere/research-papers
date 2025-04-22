@@ -44,7 +44,19 @@
     "authors": "Swarm Research Division",
     "release": "v1.0",
     "updated": "January 25, 2024",
-    "pdf": "/erasure-coding.pdf",
+    "pdf": "/erasure-coding-ACM-1.pdf",
     "content": "This document provides a technical exploration of erasure coding in the Swarm network, focusing on ensuring data integrity and resilience. It details the implementation of Reed-Solomon coding within Swarm's hash tree structure for robust data storage and recovery. The paper is ideal for developers and engineers seeking a deep understanding of Swarm's data handling mechanisms, particularly in scenarios of network faults and attacks. Key aspects include handling incomplete data sets and optimizing retrieval strategies, making it a critical read for those involved in the technical aspects of decentralised data storage."
+  },
+  {
+    "slug": "dream",
+    "title": "DREAM paper",
+    "subtitle": "Viktor Trón<br>and<br>Henning Diedrich",
+    "href": "/p/dream/",
+    "img": "/DREAM.png",
+    "authors": "Viktor Trón and Henning Diedrich",
+    "release": "v1",
+    "updated": "April 6, 2024",
+    "pdf": "/dream-1.pdf",
+    "content": "This work introduces DREAM, a novel construct that enables deletable content in otherwise immutable, decentralized storage systems such as Swarm. The paper contributes a new deletion model that is based on access revocation and presents a mechanism that allows data-sharing users to grant and later rescind access to specific data to specific consumers. The solution leverages Swarm’s distributed storage architecture to introduce a distributed one-time pad mechanism realized by a network protocol."
   }
 ]
