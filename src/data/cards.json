@@ -46,5 +46,53 @@
     "updated": "January 25, 2024",
     "pdf": "/erasure-coding.pdf",
     "content": "This document provides a technical exploration of erasure coding in the Swarm network, focusing on ensuring data integrity and resilience. It details the implementation of Reed-Solomon coding within Swarm's hash tree structure for robust data storage and recovery. The paper is ideal for developers and engineers seeking a deep understanding of Swarm's data handling mechanisms, particularly in scenarios of network faults and attacks. Key aspects include handling incomplete data sets and optimizing retrieval strategies, making it a critical read for those involved in the technical aspects of decentralised data storage."
+  },
+  {
+    "slug": "swarm-formal-spec",
+    "title": "Swarm Formal Specification",
+    "subtitle": "Swarm<br>Research Division",
+    "href": "/p/swarm-formal-spec/",
+    "img": "/swarm_formal_spec.png",
+    "authors": "Swarm Research Division",
+    "release": "Draft of August 12, 2025",
+    "updated": "August 12, 2025",
+    "pdf": "/specs_def.pdf",
+    "content": "The Swarm Formal Specification is a comprehensive technical document that formally defines the data structures, algorithms, and game-theoretic mechanisms underlying the Swarm network. It covers the Distributed Immutable Store of Chunks (DISC), chunk addressing, Single Owner Chunks, postage stamps, and redistribution game mechanics. It also details the APIs, cryptographic primitives, and protocols used to ensure integrity, availability, and incentivization within the system."
+  },
+  {
+    "slug": "price-oracle",
+    "title": "Price Oracle",
+    "subtitle": "Swarm<br>Research Division",
+    "href": "/p/price-oracle/",
+    "img": "/price_oracle.png",
+    "authors": "Swarm Research Division",
+    "release": "Draft of March 4, 2025",
+    "updated": "March 4, 2025",
+    "pdf": "/price_oracle.pdf",
+    "content": "This document describes the Swarm price oracle smart contract, which determines the unit price of storage based on the redistribution game. It introduces a price function where storage rent adapts to supply and demand, measured by the number of honest revealers in neighbourhoods. The paper defines the reactivity parameter, explains how skipped rounds are treated, and details the exponential adjustment formula for price evolution over rounds."
+  },
+  {
+    "slug": "batch-utilisation",
+    "title": "Batch Utilisation",
+    "subtitle": "György<br>Barabás & Viktor Trón",
+    "href": "/p/batch-utilisation/",
+    "img": "/batch_utilisation.png",
+    "authors": "György Barabás & Viktor Trón",
+    "release": "Draft of April 7, 2025",
+    "updated": "April 7, 2025",
+    "pdf": "/batch_utilisation.pdf",
+    "content": "This paper explores the effective utilization of postage batches in Swarm. It explains how batches, structured as collections of storage slots, enforce fair and detectable issuance of postage stamps across buckets. Using probabilistic models such as the negative binomial distribution and extreme value theory, it quantifies expected batch utilization and calibrates user-facing estimates of storage availability. It also discusses practical considerations such as packed address chunks and erasure coding."
+  },
+  {
+    "slug": "erasure-stats",
+    "title": "Erasure Statistics",
+    "subtitle": "Swarm<br>Research Division",
+    "href": "/p/erasure-stats/",
+    "img": "/erasure_stats.png",
+    "authors": "Swarm Research Division",
+    "release": "Draft of March 14, 2025",
+    "updated": "March 14, 2025",
+    "pdf": "/erasure_stats.pdf",
+    "content": "This document provides a statistical analysis of erasure coding in Swarm. It models the probability of data corruption under various error rates and parity configurations, using binomial distributions to estimate reliability. The study addresses how many parity chunks are required for different error tolerances and chunk counts, with results summarized in figures and tables. Separate analyses are provided for unencrypted and encrypted chunks, highlighting how parity overhead influences reliability guarantees."
   }
 ]
