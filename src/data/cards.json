@@ -27,12 +27,12 @@
     "slug": "swarm-protocol-specification",
     "title": "Swarm Protocol Specification",
     "subtitle": "Swarm<br>team",
-    "href": "/swarm_protocol_spec.pdf/",
+    "href": "/p/swarm_protocol_spec.pdf/",
     "img": "/swarm_protocol_spec.png",
     "authors": "Authored by the Swarm team",
     "release": "Draft of September 11, 2025",
     "updated": "September 11, 2025",
-    "pdf": "swarm_protocol_spec.pdf",
+    "pdf": "/swarm_protocol_spec.pdf",
     "content": "The Swarm Specification document is an essential resource for developers and software engineers seeking to build their own Swarm client or integrate Swarm's functionalities into their applications. This document provides a detailed exposition of the low-level implementation details of the Swarm network, its technical infrastructure, protocols, and APIs. It is aimed at readers with a solid understanding of decentralised systems and peer-to-peer technologies who require in-depth technical guidance for practical implementation. The specifications cover the aspects of data storage, content distribution and network communication within Swarm."
   },
   {
