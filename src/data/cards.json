@@ -24,10 +24,10 @@
     "content": "An essential introduction to Swarm for technically inclined readers, \"The Book of Swarm\" delves into the project's design, architecture and core principles. Ideal for developers, researchers and decentralisation experts, it provides a detailed exploration of Swarm's functionality, starting with a historical context of the Web and evolving data sovereignty concepts. This book is a vital resource for those seeking to understand or contribute to the Swarm project, offering in-depth technical insights and high-level specifications."
   },
   {
-    "slug": "swarm-protocol-specification",
+    "slug": "swarm-protocol-spec",
     "title": "Swarm Protocol Specification",
     "subtitle": "Swarm<br>team",
-    "href": "/p/swarm_protocol_spec/",
+    "href": "/p/swarm-protocol-spec/",
     "img": "/swarm_protocol_spec.png",
     "authors": "Authored by the Swarm team",
     "release": "Draft of September 11, 2025",
