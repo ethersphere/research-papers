@@ -102,8 +102,8 @@
     "href": "/p/dream-paper/",
     "img": "/dream_paper.png",
     "authors": "Swarm Research Division",
-    "release": "Draft of March 14, 2025",
-    "updated": "March 14, 2025",
+    "release": "Draft of September 11, 2025",
+    "updated": "September 11, 2025",
     "pdf": "/dream-paper.pdf",
     "content": "This work introduces DREAM, a novel construct that enables deletable content in otherwise immutable, decentralized storage systems such as Swarm. The paper contributes a new deletion model that is based on access revocation and presents a mechanism that allows data-sharing users to grant and later rescind access to specific data to specific consumers. The solution leverages Swarm’s distributed storage architecture to introduce a distributed one-time pad mechanism realized by a network protocol."
   }
