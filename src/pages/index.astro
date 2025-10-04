@@ -45,33 +45,114 @@ import 'keen-slider/keen-slider.min.css';
 <script>
 	import KeenSlider from "keen-slider";
 
-new KeenSlider(
-        '#slider', {
-          slides: {
-            perView: 1.2,
-            spacing: 32,
-          },
-          mode: "free-snap",
-          breakpoints: {
-            '(min-width: 640px)': {
-              slides: {
-                perView: 2.1,
-                spacing: 32,
-              }
-            },
-            '(min-width: 1024px)': {
-              slides: {
-                perView: 3.2,
-                spacing: 32,
-              }
-            },
-            '(min-width: 1280px)': {
-              slides: {
-                perView: 4,
-                spacing: 32,
-              }
-            },
-          },
-        }
-      );
+  // Adapted navigation plugin for Keen Slider
+  function navigationPlugin(sliderInstance: InstanceType<typeof KeenSlider>) {
+    let arrowLeftElement: HTMLButtonElement | null = null;
+    let arrowRightElement: HTMLButtonElement | null = null;
+    let arrowsContainerElement: HTMLElement | null = null;
+
+    // Creates a button element with specified classes
+    function createArrowButton(className: string): HTMLButtonElement {
+      const button = document.createElement("button");
+      const classNames = className.split(" ");
+      classNames.forEach((name) => button.classList.add(name));
+      return button;
+    }
+
+    // Sets up the arrow markup (creates and appends arrows)
+    function setupArrowMarkup(remove?: boolean) {
+      arrowsContainerElement = document.getElementById("slider-arrows");
+      if (!arrowsContainerElement) {
+        console.error("Error: The #slider-arrows container was not found in the DOM.");
+        return;
+      }
+
+      if (remove) {
+        if (arrowLeftElement) arrowLeftElement.remove();
+        if (arrowRightElement) arrowRightElement.remove();
+        arrowLeftElement = null;
+        arrowRightElement = null;
+        return;
+      }
+
+      arrowLeftElement = createArrowButton("arrow arrow--left");
+      arrowLeftElement.setAttribute("aria-label", "Previous slide");
+      arrowLeftElement.addEventListener("click", () => sliderInstance.prev());
+
+      arrowRightElement = createArrowButton("arrow arrow--right");
+      arrowRightElement.setAttribute("aria-label", "Next slide");
+      arrowRightElement.addEventListener("click", () => sliderInstance.next());
+
+      arrowsContainerElement.appendChild(arrowLeftElement);
+      arrowsContainerElement.appendChild(arrowRightElement);
+    }
+
+    // Updates arrow classes (e.g., disabled state) based on slider position
+    function updateArrowStates() {
+      if (!arrowLeftElement || !arrowRightElement || !sliderInstance.track || !sliderInstance.track.details) {
+        // If arrows or track details are not available, do nothing.
+        return;
+      }
+
+      const currentSlide = sliderInstance.track.details.rel;
+      const minIdx = sliderInstance.track.details.minIdx;
+      const maxIdx = sliderInstance.track.details.maxIdx;
+
+      if (currentSlide === minIdx) {
+        arrowLeftElement.classList.add("arrow--disabled");
+        arrowLeftElement.disabled = true;
+      } else {
+        arrowLeftElement.classList.remove("arrow--disabled");
+        arrowLeftElement.disabled = false;
+      }
+
+      if (currentSlide === maxIdx) {
+        arrowRightElement.classList.add("arrow--disabled");
+        arrowRightElement.disabled = true;
+      } else {
+        arrowRightElement.classList.remove("arrow--disabled");
+        arrowRightElement.disabled = false;
+      }
+    }
+
+    // Slider event handlers
+    sliderInstance.on("created", () => {
+      setupArrowMarkup();
+      updateArrowStates();
+    });
+
+    sliderInstance.on("optionsChanged", () => {
+      setupArrowMarkup(true); // Remove old arrows
+      setupArrowMarkup();     // Create new ones based on new options
+      updateArrowStates();
+    });
+
+    sliderInstance.on("slideChanged", () => {
+      updateArrowStates();
+    });
+
+    sliderInstance.on("destroyed", () => {
+      setupArrowMarkup(true); // Clean up arrows
+    });
+  }
+
+  // KeenSlider configuration options
+  const keenSliderOptions = {
+    slides: {
+      perView: 1.2,
+      spacing: 32,
+    },
+    mode: "free-snap" as const, // Added 'as const' for stricter typing if beneficial
+    breakpoints: {
+      '(min-width: 640px)': { slides: { perView: 2.1, spacing: 32 } },
+      '(min-width: 1024px)': { slides: { perView: 3.2, spacing: 32 } },
+      '(min-width: 1280px)': { slides: { perView: 4, spacing: 32 } },
+    },
+  };
+
+  // Initialize KeenSlider with the options and the navigation plugin
+  // Using 'as any' for keenSliderOptions if complex type issues arise with plugins,
+  // but attempting without it first for better type safety.
+  const slider = new KeenSlider("#slider", keenSliderOptions as any, [navigationPlugin]);
+
 </script>
