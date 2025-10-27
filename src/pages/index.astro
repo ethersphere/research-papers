@@ -5,86 +5,42 @@ import Card from '../components/Card.astro';
 
 import 'keen-slider/keen-slider.min.css';
 ---
-
 <Layout title="Papers">
 	<main class="">
 		<section class="my-28">
-    <div class="grid lg:grid-cols-12 lg:gap-x-[30px] mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="grid lg:grid-cols-12 lg:gap-x-[30px] mx-auto max-w-7xl px-5 lg:px-8">
 
-      <h1 class="lg:col-span-8 font-bold text-[55px] leading-[62px] lg:text-[74px] lg:leading-[78px] text-[#111111]">Papers</h1>
+        <h1 class="lg:col-span-8 font-bold text-[55px] leading-[62px] lg:text-[74px] lg:leading-[78px] text-[#111111]">Papers</h1>
 
-      <div class="lg:col-span-6 text-[#626262] text-xl lg:text-[19px] leading-[24px] lg:leading-[28px] mt-[60px]">
-        <p class="">Swarm's documentation includes a variety of papers from technical specifications to in-depth explorations of the network's architecture and functionalities, catering to a wide audience interested in decentralised technologies</p>
-      </div>
+        <div class="lg:col-span-6 text-[#626262] text-xl lg:text-[19px] leading-[24px] lg:leading-[28px] mt-[60px]">
+          <p class="">Swarm’s documentation includes a variety of papers from technical specifications to in-depth explorations of the network's architecture and functionalities, catering to a wide audience interested in decentralised technologies</p>
+        </div>
 
-      <div class="lg:col-span-6 text-[#626262] text-xl lg:text-[19px] leading-[24px] lg:leading-[28px] mt-[60px]">
-        <p class="">As Swarm evolves, this section is regularly updated to include the latest information and insights, making it a valuable and dynamic resource for anyone looking to deepen their understanding of decentralised systems.</p>
-      </div>
-    </div>
-
-  </section>
-
-  <section class="bg-white pt-20 pb-14">
-    <div class="grid lg:grid-cols-12 lg:gap-x-[30px] mx-auto max-w-7xl px-5 lg:px-8">
-      <div class="lg:col-span-12 flex justify-between items-center">
-        <h2 class="text-[#111111] tracking-[-0.02em] text-[32px] leading-tight font-bold">Contents</h2>
-        <div id="slider-arrows" class="flex space-x-4">
-          {/* Arrows will be dynamically added here by JavaScript */}
+        <div class="lg:col-span-6 text-[#626262] text-xl lg:text-[19px] leading-[24px] lg:leading-[28px] mt-[60px]">
+          <p class="">As Swarm evolves, this section is regularly updated to include the latest information and insights, making it a valuable and dynamic resource for anyone looking to deepen their understanding of decentralised systems.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="w-full pb-40 overflow-hidden bg-white">
-    <div class="px-5 mx-auto lg:px-8 max-w-7xl">
-      <div> {/* Removed 'relative' class and old arrow buttons from here */}
-        <div id="slider" class="keen-slider">
-			{cards.map(({title, href, img, subtitle}) => (
-				<Card title={title} href={href} img={img} subtitle={subtitle} />
-			))}
+    <section class="bg-white pt-20 pb-14">
+      <div class="grid lg:grid-cols-12 lg:gap-x-[30px] mx-auto max-w-7xl lg:space-y-8 px-5 lg:px-8">
+        <h2 class="lg:col-span-6 text-[#111111] tracking-[-0.02em] text-[32px] leading-tight font-bold">Contents</h2>
+      </div>
+    </section>
+
+    <!-- Responsive grid of cards (replaces Keen slider) -->
+    <section class="w-full pb-40 overflow-hidden bg-white">
+      <div class="px-5 mx-auto lg:px-8 max-w-7xl">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {cards.map(({title, href, img, subtitle}) => (
+            <Card title={title} href={href} img={img} subtitle={subtitle} />
+          ))}
         </div>
       </div>
-    </div>
-
-  </section>
-
-
+    </section>
 	</main>
-
 </Layout>
 
-<style is:global>
-  .arrow {
-    width: 30px;
-    height: 30px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    padding: 0; /* Ensure no extra padding affects size */
-  }
-  .arrow:focus {
-    outline: 1px solid #3b82f6; /* Example focus style */
-  }
-  .arrow.arrow--disabled {
-    cursor: default;
-    /* The disabled state is handled by changing the background-image SVG fill */
-  }
-  .arrow--left {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23111111' viewBox='0 0 24 24'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
-  }
-  .arrow--right {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23111111' viewBox='0 0 24 24'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E");
-  }
-  .arrow--disabled.arrow--left {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23cccccc' viewBox='0 0 24 24'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
-  }
-  .arrow--disabled.arrow--right {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23cccccc' viewBox='0 0 24 24'%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E");
-  }
-</style>
 
 <script>
 	import KeenSlider from "keen-slider";

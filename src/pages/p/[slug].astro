@@ -3,21 +3,21 @@ import Layout from '../../layouts/Layout.astro';
 import cards from '../../data/cards.json'
 
 export function getStaticPaths() {
-    return cards.map(({slug, title, subtitle, img, authors, release, updated, pdf, content}) => {
+    return cards.map(({slug, title, subtitle, img, authors, updated, pdf, content}) => {
         return {
             params: { slug },
-            props: { title, subtitle, img, authors, release, updated, pdf, content  }
+            props: { title, subtitle, img, authors, updated, pdf, content  }
         }
     });
 }
 
-const { title, subtitle, img, authors, release, updated, pdf, content } = Astro.props;
+const { title, subtitle, img, authors, updated, pdf, content } = Astro.props;
 ---
 <Layout title={title}>
     <section class="py-3 bg-white">
         <div class="text-[#111111] relative mx-auto max-w-7xl px-5 lg:px-8 h-16 sm:flex sm:items-center">
             <a href="/" class="text-lg font-semibold leading-[26px] relative z-10 inline-block">{`<- `}<span class="tracking-[-0.36px]">Papers</span></a>
-            <h1 class="z-0 sm:absolute mx-auto w-full left-0 right-0 sm:text-center mt-3 sm:max-w-[60%] sm:mt-0 text-[28px] font-bold leading-[64px] tracking-[-0.56px]">{title}</h1>
+            <h1 class="z-0 sm:absolute mx-auto w-full left-0 right-0 sm:text-center mt-3 sm:max-w-[60%] sm:mt-0 text-[28px] font-bold leading-[32px] tracking-[-0.56px]">{title}</h1>
         </div>
         <div class="mx-auto max-w-3xl px-5 lg:px-8 grid sm:grid-cols-2 sm:gap-x-12 md:gap-x-32 gap-y-16 mt-12 sm:mt-32 mb-40">
             <div class="order-2 sm:order-first">
@@ -33,11 +33,6 @@ const { title, subtitle, img, authors, release, updated, pdf, content } = Astro.
                         <div class="w-24 text-lg font-semibold leading-[26px]">Author(s):</div>
                         <div class="sm:col-span-2 text-lg leading-[26px]">{authors}</div>
                 </div>
-
-                <div class="gap-4 gap-y-1 text-[#626262] sm:grid sm:grid-cols-3 sm:px-0">
-                        <div class="w-24 text-lg font-semibold leading-[26px]">Release:</div>
-                        <div class="sm:col-span-2 text-lg leading-[26px]">{release}</div>
-                        </div>
                 <div class="gap-4 gap-y-1 text-[#626262] sm:grid sm:grid-cols-3 sm:px-0">
 
                         <div class="w-24 text-lg font-semibold leading-[26px]">Updated:</div>
