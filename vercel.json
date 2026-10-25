@@ -96,7 +96,7 @@
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "destination": "https://www.ethswarm.org/papers/",
       "permanent": true
     }
